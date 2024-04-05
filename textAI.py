@@ -31,6 +31,10 @@ model.add(tf.keras.layers.Dense(total_words, activation='softmax'))
 
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
+
+#lol
+
+
 model.fit(X, y, epochs=100, verbose=1)
 
 def generate_text(seed_text, next_words, model, max_sequence_len):

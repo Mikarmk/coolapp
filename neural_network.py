@@ -45,5 +45,4 @@ for i in range(10000):
     nn.feedforward()
     nn.backprop()
 
-# Test the neural network on some new data
 print(nn.output)

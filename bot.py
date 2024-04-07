@@ -4,22 +4,21 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
 # Replace these values with your API keys
-DALLI_API_KEY = 'dalli_api_key'
-CHATGPT_API_KEY = 'chatgpt_api_key'
+DALLI_API_KEY = 'your_dalli_api_key'
+CHATGPT_API_KEY = 'your_chatgpt_api_key'
 
-# Function for sending a request to the DALL-E 3 API
-def generate_image(prompt):
-    url = 'https://api-inference.huggingface.co/models/runwayml/dalle-v2'
-    headers = {'Authorization': f'Bearer {DALLI_API_KEY}'}
-    data = {'inputs': prompt}
-    response = requests.post(url, headers=headers, json=data)
-    image_url = response.json()[0]['image']
-    return image_url
+# Censored words list
+censored_words = ['censored_word1', 'censored_word2', 'censored_word3']
 
-# Function for sending a request to ChatGPT
+# Function for sending a request to ChatGPT with censorship
 def generate_text(prompt):
     url = 'https://api.openai.com/v1/chat/completions'
     headers = {'Authorization': f'Bearer {CHATGPT_API_KEY}'}
+    
+    # Apply censorship filter to prompt
+    for word in censored_words:
+        prompt = prompt.replace(word, '*' * len(word))
+    
     data = {
         'model': 'gpt-3.5-turbo',
         'messages': [{'role': 'user', 'content': prompt}],
@@ -27,6 +26,11 @@ def generate_text(prompt):
     }
     response = requests.post(url, headers=headers, json=data)
     text = response.json()['choices'][0]['message']['content']
+    
+    # Apply censorship filter to generated text
+    for word in censored_words:
+        text = text.replace(word, '*' * len(word))
+    
     return text
 
 # Function for processing the /generate command

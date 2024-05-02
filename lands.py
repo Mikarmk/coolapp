@@ -35,7 +35,7 @@ def add_beach_and_vegetation(grid):
             if grid[i, j] == 1:  # Суша
                 for x in range(max(0, i-1), min(rows, i+2)):
                     for y in range(max(0, j-1), min(cols, j+2)):
-                        if grid[x, y] in [3, 4]:  # Глубокое или мелкое море
+                        if grid[x, y] in [3, 4]:  #
                             grid[x, y] = 2  # Пляж
                 if np.random.rand() < 0.5:
                     grid[i, j] = 5  # Трава

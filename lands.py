@@ -7,17 +7,15 @@ cols = 150
 
 grid = np.zeros((rows, cols))  
 
-# Функция для создания острова случайной формы
 def create_island(grid):
-    num_points = np.random.randint(5, 15)  # Количество точек для определения формы острова
-    points = np.random.randint(30, 120, size=(num_points, 2))  # Случайные точки для формирования острова
+    num_points = np.random.randint(5, 15) 
+    points = np.random.randint(30, 120, size=(num_points, 2))  
     for i in range(rows):
         for j in range(cols):
-            if np.any(np.linalg.norm(points - [i, j], axis=1) < 20):  # Расстояние до ближайшей точки
+            if np.any(np.linalg.norm(points - [i, j], axis=1) < 20):  
                 grid[i, j] = 1  # Суша
     return grid
 
-# Функция для добавления воды вокруг острова с разной глубиной
 def add_water(grid):
     for i in range(rows):
         for j in range(cols):

@@ -29,7 +29,6 @@ def add_water(grid):
                                 grid[i, j] = 4  # Мелкое море
     return grid
 
-# Функция для добавления пляжей, растительности и гор
 def add_beach_and_vegetation(grid):
     for i in range(rows):
         for j in range(cols):

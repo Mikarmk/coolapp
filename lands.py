@@ -36,22 +36,22 @@ def add_beach_and_vegetation(grid):
                 for x in range(max(0, i-1), min(rows, i+2)):
                     for y in range(max(0, j-1), min(cols, j+2)):
                         if grid[x, y] in [3, 4]:  # Глубокое или мелкое море
-                            grid[x, y] = 2  # Пляж
-                if np.random.rand() < 0.6:
-                    grid[i, j] = 5  # Трава
-                if np.random.rand() < 0.3:
-                    grid[i, j] = 6  # Деревья
+                            grid[x, y] = 4  # Пляж
+                if np.random.rand() < 2:
+                    grid[i, j] = 20  # Трава
+                if np.random.rand() < 0.5:
+                    grid[i, j] = 8  # Деревья
                 if np.random.rand() < 0.1:
-                    grid[i, j] = 7  # Горы
+                    grid[i, j] = 5  # Горы
     return grid
 
 def add_volcano(grid):
-    if np.random.rand() < 0.1:  # 10% вероятность появления вулкана
+    if np.random.rand() < 0.2:
         volcano_x, volcano_y = np.random.randint(30, 120), np.random.randint(30, 120)
         for i in range(max(0, volcano_x-5), min(rows, volcano_x+6)):
             for j in range(max(0, volcano_y-5), min(cols, volcano_y+6)):
                 if np.sqrt((i - volcano_x)**2 + (j - volcano_y)**2) < 5:
-                    grid[i, j] = 8  # Вулкан
+                    grid[i, j] = 10  # Вулкан
     return grid
 
 def add_details(grid):
@@ -71,7 +71,7 @@ grid = add_details(grid)
 fig, ax = plt.subplots(figsize=(12, 12))
 cmap = plt.get_cmap('terrain')
 cmap.set_under('darkblue')
-cmap.set_over('red')
+cmap.set_over('green')
 ax.imshow(grid, cmap=cmap, vmin=-0.5, vmax=9.5, interpolation='nearest')
 ax.axis('off')
 

@@ -60,6 +60,10 @@ def add_details(grid):
             if grid[i, j] == 1:  # Суша
                 if np.random.rand() < 0.05:
                     grid[i, j] = 9  # Скалы
+                if i < rows/3:
+                    grid[i, j] = 6  # Снег на севере
+                if i > 2*rows/3:
+                    grid[i, j] = 7  # Пески и пустыня на юге
     return grid
 
 grid = create_island(grid)

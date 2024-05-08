@@ -161,5 +161,4 @@ while running:
     screen.blit(text, (10, 40))
     pygame.display.flip()
 
-# Выход из игры
 pygame.quit()

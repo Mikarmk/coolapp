@@ -1,0 +1,37 @@
+section .data
+    num1 dd 10
+    num2 dd 5
+    result dd 0
+
+section .text
+    global _start
+
+_start:
+    ; Сложение
+    mov eax, [num1]
+    add eax, [num2]
+    mov [result], eax
+
+    ; Вывод результата сложения
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, result
+    mov edx, 4
+    int 0x80
+
+    ; Вычитание
+    mov eax, [num1]
+    sub eax, [num2]
+    mov [result], eax
+
+    ; Вывод результата вычитания
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, result
+    mov edx, 4
+    int 0x80
+
+    ; Завершение программы
+    mov eax, 1
+    xor ebx, ebx
+    int 0x80

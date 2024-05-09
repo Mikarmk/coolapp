@@ -47,10 +47,6 @@ To get started with the "coolapp" project, follow these steps:
 
 If you're interested in contributing to the "coolapp" project, feel free to fork the repository and submit pull requests. I'm always open to collaborating and learning from others.
 
-## Contact
-
-If you have any questions or would like to discuss the project further, please feel free to reach out to me at [your-email@example.com].
-
 ## Acknowledgments
 
 I would like to acknowledge the following resources and libraries that have been instrumental in the development of the "coolapp" project:

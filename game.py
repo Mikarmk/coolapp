@@ -10,7 +10,6 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
-# Создание окна
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Пиксельная стрелялка с постоянными атаками врагов")
 

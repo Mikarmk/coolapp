@@ -12,7 +12,6 @@ def generate_text(prompt):
     url = 'https://api.openai.com/v1/chat/completions'
     headers = {'Authorization': f'Bearer {CHATGPT_API_KEY}'}
     
-    # Apply censorship filter to prompt
     for word in censored_words:
         prompt = prompt.replace(word, '*' * len(word))
     

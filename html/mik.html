@@ -85,10 +85,8 @@
           console.log('Error accessing webcam:', error);
         });
 
-
       captureButton.addEventListener('click', function() {
         canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-
         const dataUrl = canvas.toDataURL('image/png');
 
         photo.src = dataUrl;

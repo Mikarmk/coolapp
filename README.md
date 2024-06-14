@@ -18,7 +18,6 @@ A cool application built with various programming languages and technologies.
 
 ## About the Project
 
-
 The "coolapp" project is a showcase of my programming skills and experiments across different languages and frameworks. It includes a variety of small projects and applications that demonstrate my abilities in areas such as:
 
 - Python

@@ -9,6 +9,8 @@
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
 ![Pygame](https://img.shields.io/badge/Pygame-003B57?style=flat-square&logo=pygame&logoColor=white)
 
+Hi
+
 A cool application built with various programming languages and technologies.
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/Mikarmk/coolapp)
@@ -45,7 +47,3 @@ To get started with the "coolapp" project, follow these steps:
 2. Navigate to the project directory:
 3. Explore the different subdirectories and files to find the project you're interested in.
 4. Follow the instructions in the respective project's README file to set up and run the application.
-
-## Contributing
-
-If you're interested in contributing to the "coolapp" project, feel free to fork the repository and submit pull requests. I'm always open to collaborating and learning from others.
